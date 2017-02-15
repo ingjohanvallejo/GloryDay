@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5KP-Qi-7AU">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome To Glory Days!-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GloryDays" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="iYY-Gq-XF8">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpv-5y-8nS">
+                                        <string key="text">To use the app Glory Days need permissions to read your photo library, record your voice and transcribe it to text. Haciedno click the button below, we will ask those permissions, but if you change your mind you can change the settings in the Settings menu.</string>
+                                        <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txb-Hv-ayb">
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="askForPermissions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lfH-aJ-6Ay"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iYY-Gq-XF8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="H7T-iY-baM"/>
+                            <constraint firstItem="iYY-Gq-XF8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I8t-Pa-Lpm"/>
+                            <constraint firstItem="hpv-5y-8nS" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-40" id="KyB-Vz-mgW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Welcome To Glory Days!" id="uK3-C5-z7a"/>
+                    <connections>
+                        <outlet property="infoLabel" destination="hpv-5y-8nS" id="zXA-M7-Sht"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056.8" y="122.78860569715144"/>
+        </scene>
+        <!--Memories Collection View Controller-->
+        <scene sceneID="T9e-sP-3jj">
+            <objects>
+                <collectionViewController id="6DC-Yq-NoI" customClass="MemoriesCollectionViewController" customModule="GloryDays" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="1hG-Y9-w5c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.36668830859382268" green="0.3923490826193452" blue="0.67179568524873101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="smC-hJ-Q3L">
+                            <size key="itemSize" width="170" height="170"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="6" minY="0.0" maxX="6" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="QFu-6G-zvC" customClass="MemoryCell" customModule="GloryDays" customModuleProvider="target">
+                                <rect key="frame" x="6" y="50" width="170" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qKG-cf-osF"/>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="qKG-cf-osF" firstAttribute="top" secondItem="QFu-6G-zvC" secondAttribute="topMargin" id="2Lo-jN-E2e"/>
+                                    <constraint firstItem="qKG-cf-osF" firstAttribute="trailing" secondItem="QFu-6G-zvC" secondAttribute="trailingMargin" id="4Na-b7-J4g"/>
+                                    <constraint firstItem="qKG-cf-osF" firstAttribute="leading" secondItem="QFu-6G-zvC" secondAttribute="leadingMargin" id="S7T-NK-nfh"/>
+                                    <constraint firstItem="qKG-cf-osF" firstAttribute="bottom" secondItem="QFu-6G-zvC" secondAttribute="bottomMargin" id="rT1-Ga-phV"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageMemory" destination="qKG-cf-osF" id="UwV-LS-Gc6"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="FnK-Pm-BAD">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" placeholder="Image Search" translatesAutoresizingMaskIntoConstraints="NO" id="0Lc-92-FdA">
+                                    <frame key="frameInset" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="searchField.textColor">
+                                            <color key="value" red="0.91432027284263961" green="0.91432027284263961" blue="0.91432027284263961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <outlet property="delegate" destination="6DC-Yq-NoI" id="w7Q-in-Scl"/>
+                                    </connections>
+                                </searchBar>
+                            </subviews>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="6DC-Yq-NoI" id="Ygv-8l-MH7"/>
+                            <outlet property="delegate" destination="6DC-Yq-NoI" id="srf-OT-8JM"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="ANm-cf-xJ6"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G3S-ZC-5x6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056.8" y="888.30584707646187"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ie9-pc-imo">
+            <objects>
+                <navigationController storyboardIdentifier="showTerms" automaticallyAdjustsScrollViewInsets="NO" id="bkC-1s-YbA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ves-A6-f6G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sli-0j-gOH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Veu-0p-ctN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119" y="123"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ymk-Mp-4ni">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5KP-Qi-7AU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fgO-Po-deI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6DC-Yq-NoI" kind="relationship" relationship="rootViewController" id="7SJ-Yy-fvf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kl4-jw-uil" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118" y="890"/>
+        </scene>
+    </scenes>
+</document>
